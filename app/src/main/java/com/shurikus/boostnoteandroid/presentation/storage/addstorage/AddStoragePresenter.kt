@@ -1,0 +1,3 @@
+package com.shurikus.boostnoteandroid.presentation.storage.addstorage
+
+class AddStoragePresenter

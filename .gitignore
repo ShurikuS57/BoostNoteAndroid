@@ -1,0 +1,15 @@
+*.iml
+.gradle
+/local.properties
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+
+.idea/
+*.apk
+gradlew.bat
+fastlane/report.xml
+fastlane/README.md
+/app/src/main/gen
+Gemfile.lock

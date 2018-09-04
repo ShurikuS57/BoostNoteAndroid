@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_storage"
+    app:startDestination="@id/storageListFragment">
+
+    <fragment
+        android:id="@+id/storageListFragment"
+        android:name="com.shurikus.boostnoteandroid.ui.storage.storagelist.StorageListFragment"
+        android:label="StorageListFragment" >
+        <action
+            android:id="@+id/action_storageListFragment_to_addStorageFragment"
+            app:destination="@id/addStorageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addStorageFragment"
+        android:name="com.shurikus.boostnoteapclassp.ui.storage.addstorage.AddStorageFragment"
+        android:label="AddStorageFragment" />
+</navigation>
