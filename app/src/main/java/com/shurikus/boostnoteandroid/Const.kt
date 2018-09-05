@@ -10,4 +10,8 @@ class Const {
         SNIPPET_NOTE,
         MARKDOWN_NOTE
     }
+
+    enum class StorageType {
+        LOCAL_FILE
+    }
 }

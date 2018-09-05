@@ -12,4 +12,5 @@
 
     <!--Storage list-->
     <string name="error_load_storage_list">Fail load storage list</string>
+    <string name="title_storage_manager">Storage manager</string>
 </resources>

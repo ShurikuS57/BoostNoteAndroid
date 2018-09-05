@@ -1,4 +1,4 @@
-package com.shurikus.boostnoteandroid.presentation.storage.storagelist
+package com.shurikus.boostnoteandroid.presentation.storage.storagemanger
 
 import com.arellomobile.mvp.InjectViewState
 import com.shurikus.boostnoteandroid.R
@@ -7,9 +7,9 @@ import com.shurikus.boostnoteandroid.ui.base.BasePresenter
 import javax.inject.Inject
 
 @InjectViewState
-class StorageListPresenter @Inject constructor(
+class StorageManagerPresenter @Inject constructor(
         private val storageInteractor: StorageInteractor
-) : BasePresenter<StorageListView>() {
+) : BasePresenter<StorageManagerView>() {
 
     fun onViewCreated() {
         disposable.add(storageInteractor

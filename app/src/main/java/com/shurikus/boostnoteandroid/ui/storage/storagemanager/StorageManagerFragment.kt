@@ -1,4 +1,4 @@
-package com.shurikus.boostnoteandroid.ui.storage.storagelist
+package com.shurikus.boostnoteandroid.ui.storage.storagemanager
 
 import android.os.Bundle
 import android.view.View
@@ -6,24 +6,24 @@ import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.shurikus.boostnoteandroid.R
 import com.shurikus.boostnoteandroid.di.DI
-import com.shurikus.boostnoteandroid.presentation.storage.storagelist.StorageListPresenter
-import com.shurikus.boostnoteandroid.presentation.storage.storagelist.StorageListView
+import com.shurikus.boostnoteandroid.presentation.storage.storagemanger.StorageManagerPresenter
+import com.shurikus.boostnoteandroid.presentation.storage.storagemanger.StorageManagerView
 import com.shurikus.boostnoteandroid.ui.base.BaseFragment
-import kotlinx.android.synthetic.main.fragment_storage_list.*
+import kotlinx.android.synthetic.main.fragment_storage_manager.*
 import toothpick.Toothpick
 
-class StorageListFragment : BaseFragment(), StorageListView {
-    override val layoutRes = R.layout.fragment_storage_list
+class StorageManagerFragment : BaseFragment(), StorageManagerView {
+    override val layoutRes = R.layout.fragment_storage_manager
     override val navigatorRes = R.id.storage_nav_host
 
     @InjectPresenter
-    lateinit var presenter: StorageListPresenter
+    lateinit var presenter: StorageManagerPresenter
 
     @ProvidePresenter
-    fun providePresenter(): StorageListPresenter {
+    fun providePresenter(): StorageManagerPresenter {
         return Toothpick
                 .openScope(DI.APP_SCOPE)
-                .getInstance(StorageListPresenter::class.java)
+                .getInstance(StorageManagerPresenter::class.java)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -31,6 +31,9 @@ class StorageListFragment : BaseFragment(), StorageListView {
         presenter.onViewCreated()
         fab.setOnClickListener {
             presenter.onAddStorageClicked()
+        }
+        toolbar.setNavigationOnClickListener {
+            requireActivity().onBackPressed()
         }
     }
 

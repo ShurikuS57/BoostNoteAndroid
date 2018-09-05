@@ -1,4 +1,4 @@
-package com.shurikus.boostnoteandroid.presentation.storage.storagelist
+package com.shurikus.boostnoteandroid.presentation.storage.storagemanger
 
 import com.arellomobile.mvp.viewstate.strategy.AddToEndSingleStrategy
 import com.arellomobile.mvp.viewstate.strategy.OneExecutionStateStrategy
@@ -6,7 +6,7 @@ import com.arellomobile.mvp.viewstate.strategy.StateStrategyType
 import com.shurikus.boostnoteandroid.ui.base.BaseView
 
 @StateStrategyType(AddToEndSingleStrategy::class)
-interface StorageListView : BaseView {
+interface StorageManagerView : BaseView {
 
     fun showEmptyStoragePlaceHolder()
 

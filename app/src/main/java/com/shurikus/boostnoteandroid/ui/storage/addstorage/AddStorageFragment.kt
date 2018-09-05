@@ -1,4 +1,4 @@
-package com.shurikus.boostnoteapclassp.ui.storage.addstorage
+package com.shurikus.boostnoteandroid.ui.storage.addstorage
 
 import com.shurikus.boostnoteandroid.R
 import com.shurikus.boostnoteandroid.presentation.storage.activity.StorageView
