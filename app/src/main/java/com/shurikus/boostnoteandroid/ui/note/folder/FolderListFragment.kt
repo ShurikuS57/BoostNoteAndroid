@@ -9,8 +9,9 @@ import com.shurikus.boostnoteandroid.di.DI
 import com.shurikus.boostnoteandroid.presentation.note.folder.FolderListPresenter
 import com.shurikus.boostnoteandroid.presentation.note.folder.FolderListView
 import com.shurikus.boostnoteandroid.ui.base.BaseFragment
+import com.shurikus.boostnoteandroid.ui.main.MainActivity
 import com.shurikus.boostnoteandroid.ui.note.folder.adapter.FolderAdapter
-import kotlinx.android.synthetic.main.fragment_note_list.*
+import kotlinx.android.synthetic.main.fragment_folder_list.*
 import toothpick.Toothpick
 
 class FolderListFragment : BaseFragment(), FolderListView {
@@ -30,6 +31,9 @@ class FolderListFragment : BaseFragment(), FolderListView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter.loadFolders()
+        toolbar.setNavigationOnClickListener {
+            presenter.onMenuPressed()
+        }
     }
 
     override fun showFolderAdapter(folderAdapter: FolderAdapter) {
@@ -42,6 +46,12 @@ class FolderListFragment : BaseFragment(), FolderListView {
 
     override fun hideEmptyFoldersPlaceHolder() {
         //TODO need implement
+    }
+
+    override fun showMenu() {
+        if (requireActivity() is MainActivity) {
+            (requireActivity() as MainActivity).showNavMenu()
+        }
     }
 
     override fun goToNoteListScreen(bundle: Bundle) {

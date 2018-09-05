@@ -45,4 +45,8 @@ class NoteListPresenter @Inject constructor(
                 },{
                 }))
     }
+
+    fun onMenuPressed() {
+        viewState.showMenu()
+    }
 }

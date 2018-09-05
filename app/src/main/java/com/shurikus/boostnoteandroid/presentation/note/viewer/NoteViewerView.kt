@@ -11,4 +11,7 @@ interface NoteViewerView : BaseView {
     @StateStrategyType(OneExecutionStateStrategy::class)
     fun showMarkdownNote(noteData: String?)
 
+    @StateStrategyType(OneExecutionStateStrategy::class)
+    fun showMenu()
+
 }

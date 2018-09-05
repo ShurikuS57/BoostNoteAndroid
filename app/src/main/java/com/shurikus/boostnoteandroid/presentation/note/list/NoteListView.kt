@@ -25,4 +25,6 @@ interface NoteListView : BaseView {
 
     fun showNoSupportTypeNoteError()
 
+    @StateStrategyType(OneExecutionStateStrategy::class)
+    fun showMenu()
 }

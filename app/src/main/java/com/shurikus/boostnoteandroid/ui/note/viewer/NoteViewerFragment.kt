@@ -9,6 +9,7 @@ import com.shurikus.boostnoteandroid.di.DI
 import com.shurikus.boostnoteandroid.presentation.note.viewer.NoteViewerPresenter
 import com.shurikus.boostnoteandroid.presentation.note.viewer.NoteViewerView
 import com.shurikus.boostnoteandroid.ui.base.BaseFragment
+import com.shurikus.boostnoteandroid.ui.main.MainActivity
 import kotlinx.android.synthetic.main.fragment_note_viewer.*
 import ru.noties.markwon.Markwon
 import toothpick.Toothpick
@@ -30,6 +31,15 @@ class NoteViewerFragment : BaseFragment(), NoteViewerView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter.onViewCreated(arguments)
+        toolbar.setNavigationOnClickListener {
+            presenter.onMenuPressed()
+        }
+    }
+
+    override fun showMenu() {
+        if (requireActivity() is MainActivity) {
+            (requireActivity() as MainActivity).showNavMenu()
+        }
     }
 
     override fun showMarkdownNote(noteData: String?) {

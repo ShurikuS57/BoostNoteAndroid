@@ -9,6 +9,7 @@ import com.shurikus.boostnoteandroid.di.DI
 import com.shurikus.boostnoteandroid.presentation.note.list.NoteListPresenter
 import com.shurikus.boostnoteandroid.presentation.note.list.NoteListView
 import com.shurikus.boostnoteandroid.ui.base.BaseFragment
+import com.shurikus.boostnoteandroid.ui.main.MainActivity
 import com.shurikus.boostnoteandroid.ui.note.list.adapter.NotesAdapter
 import com.shurikus.boostnoteandroid.utils.extension.toast
 import kotlinx.android.synthetic.main.fragment_note_list.*
@@ -35,6 +36,15 @@ class NoteListFragment : BaseFragment(), NoteListView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter.onViewCreated(arguments)
+        toolbar.setNavigationOnClickListener {
+            presenter.onMenuPressed()
+        }
+    }
+
+    override fun showMenu() {
+        if (requireActivity() is MainActivity) {
+            (requireActivity() as MainActivity).showNavMenu()
+        }
     }
 
     override fun showNotesAdapter(notesAdapter: NotesAdapter) {

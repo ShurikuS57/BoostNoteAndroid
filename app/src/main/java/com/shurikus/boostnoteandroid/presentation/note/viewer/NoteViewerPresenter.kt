@@ -18,4 +18,8 @@ class NoteViewerPresenter @Inject constructor(
             viewState.showMarkdownNote(gson.fromJson(noteData, NoteEntity::class.java).content)
         }
     }
+
+    fun onMenuPressed() {
+        viewState.showMenu()
+    }
 }

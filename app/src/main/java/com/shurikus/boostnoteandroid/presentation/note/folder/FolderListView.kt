@@ -20,4 +20,6 @@ interface FolderListView : BaseView {
     @StateStrategyType(OneExecutionStateStrategy::class)
     fun goToNoteListScreen(bundle: Bundle)
 
+    @StateStrategyType(OneExecutionStateStrategy::class)
+    fun showMenu()
 }

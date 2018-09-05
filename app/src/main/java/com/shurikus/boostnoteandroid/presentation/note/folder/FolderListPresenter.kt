@@ -32,4 +32,8 @@ class FolderListPresenter @Inject constructor(
                 }))
     }
 
+    fun onMenuPressed() {
+        viewState.showMenu()
+    }
+
 }
